@@ -125,8 +125,8 @@
 </head>
 
 <body class="bg-gray-900 text-gray-200">
-    <header class="p-5">
-        <nav class="flex justify-between items-center">
+     <header class="p-5 "> <!--//sticky top-0 -->
+        <nav class="flex justify-between items-center ">
             <h1 class="text-3xl font-bold text-yellow-500">M A</h1>
             <ul class="flex space-x-5">
                 <li><a href="#about" class="hover:text-yellow-500">About</a></li>
@@ -158,9 +158,9 @@
                 </div>
 
                 <div class="w-1/2 flex flex-col items-center">
-                    <img class="mask mask-circle w-16  mb-2" src="git.png" />
-                    <img class="mask mask-circle w-16  mb-2" src="linkedin.png" />
-                    <img class="mask mask-circle w-16 " src="git.png" />
+                    <img class="mask mask-circle w-16 hover:scale-150  transition-transform duration-300 mb-2" src="git.png" />
+                    <img class="mask mask-circle w-16 hover:scale-150  transition-transform duration-300 mb-2" src="linkedin.png" />
+                    <img class="mask mask-circle w-16 hover:scale-150  transition-transform duration-300" src="git.png" />
                 </div>
             </div>
 
@@ -185,13 +185,12 @@
 
         <section id="skills" class="p-10 mt-5">
             <h3 class="text-6xl font-bold text-yellow-500 mb-5">My Skills</h3>
-            <div class="grid grid-cols-3 md:grid-cols-4 gap-6">
-
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <div class=" rounded-md text-center hov-scale">
 
-                    <div class="card bg-base-100 w-96 h-[27rem]  shadow-xl">
+                    <div class="card bg-base-100   shadow-xl">
                         <figure class="px-10 pt-10">
-                            <img src="react.png" alt="Shoes" class="rounded-xl" />
+                            <img src="react.png" alt="Shoes" class="rounded-xl  w-32 h-32" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">React</h2>
@@ -203,9 +202,9 @@
                 </div>
                 <div class=" rounded-md text-center hov-scale">
 
-                    <div class="card bg-base-100 w-96 h-[27rem] shadow-xl">
+                    <div class="card bg-base-100  shadow-xl">
                         <figure class="px-10 pt-10">
-                            <img src="sf.png" alt="Shoes" class="rounded-xl" />
+                            <img src="sf.png" alt="Shoes" class="rounded-xl  w-32 h-32" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">Symfony</h2>
@@ -214,9 +213,9 @@
                 </div>
                 <div class=" rounded-md text-center hov-scale">
 
-                    <div class="card bg-base-100 w-96 h-[27rem] shadow-xl">
+                    <div class="card bg-base-100  shadow-xl">
                         <figure class="px-10 pt-10">
-                            <img src="laravel.png" alt="Shoes" class="rounded-xl" />
+                            <img src="laravel.png" alt="Shoes" class="rounded-xl  w-32 h-32" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">Laravel</h2>
@@ -225,9 +224,9 @@
                 </div>
                 <div class=" rounded-md text-center hov-scale">
 
-                    <div class="card bg-base-100 w-96 h-[27rem] shadow-xl">
+                    <div class="card bg-base-100  shadow-xl">
                         <figure class="px-10 pt-10">
-                            <img src="php.png" alt="Shoes" class="rounded-xl" />
+                            <img src="php.png" alt="Shoes" class="rounded-xl  w-32 h-32" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">PHP</h2>
@@ -236,9 +235,9 @@
                 </div>
                 <div class=" rounded-md text-center hov-scale">
 
-                    <div class="card bg-base-100 w-96 h-[27rem] shadow-xl">
+                    <div class="card bg-base-100  shadow-xl">
                         <figure class="px-10 pt-10">
-                            <img src="JavaScript.png" alt="Shoes" class="rounded-xl" />
+                            <img src="JavaScript.png" alt="Shoes" class="rounded-xl  w-32 h-32" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">JavaScript</h2>
@@ -247,9 +246,9 @@
                 </div>
                 <div class=" rounded-md text-center hov-scale">
 
-                    <div class="card bg-base-100 w-96 h-[27rem] shadow-xl">
+                    <div class="card bg-base-100  shadow-xl">
                         <figure class="px-10 pt-10">
-                            <img src="sql.png" alt="Shoes" class="rounded-xl" />
+                            <img src="sql.png" alt="Shoes" class="rounded-xl  w-32 h-32" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">Sql</h2>
@@ -258,9 +257,9 @@
                 </div>
                 <div class=" rounded-md text-center hov-scale">
 
-                    <div class="card bg-base-100 w-96 h-[27rem] shadow-xl">
+                    <div class="card bg-base-100  shadow-xl">
                         <figure class="px-10 pt-10">
-                            <img src="python.png" alt="Shoes" class="rounded-xl" />
+                            <img src="python.png" alt="Shoes" class="rounded-xl  w-32 h-32" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">Python</h2>
@@ -270,9 +269,9 @@
 
                 <div class=" rounded-md text-center hov-scale">
 
-                    <div class="card bg-base-100 w-96 h-[27rem] shadow-xl">
+                    <div class="card bg-base-100  shadow-xl">
                         <figure class="px-10 pt-10">
-                            <img src="responsive UI.png" alt="Shoes" class="rounded-xl" />
+                            <img src="responsive UI.png" alt="Shoes" class="rounded-xl  w-32 h-32" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">Repensive UI</h2>
@@ -281,9 +280,9 @@
                 </div>
                 <div class=" rounded-md text-center hov-scale">
 
-                    <div class="card bg-base-100 w-96 h-[27rem] shadow-xl">
+                    <div class="card bg-base-100  shadow-xl">
                         <figure class="px-10 pt-10">
-                            <img src="tailwind.png" alt="Shoes" class="rounded-xl" />
+                            <img src="tailwind.png" alt="Shoes" class="rounded-xl  w-32 h-32" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">Tailwind CSS</h2>
@@ -292,9 +291,9 @@
                 </div>
                 <div class=" rounded-md text-center hov-scale">
 
-                    <div class="card bg-base-100 w-96 h-[27rem] shadow-xl">
+                    <div class="card bg-base-100  shadow-xl">
                         <figure class="px-10 pt-10">
-                            <img src="Bootstrap.png" alt="Shoes" class="rounded-xl" />
+                            <img src="Bootstrap.png" alt="Shoes" class="rounded-xl  w-32 h-32" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">Bootstrap</h2>
@@ -303,9 +302,9 @@
                 </div>
                 <div class=" rounded-md text-center hov-scale">
 
-                    <div class="card bg-base-100 w-96 h-[27rem] shadow-xl">
+                    <div class="card bg-base-100  shadow-xl">
                         <figure class="px-10 pt-10">
-                            <img src="git logo.png" alt="Shoes" class="rounded-xl" />
+                            <img src="git logo.png" alt="Shoes" class="rounded-xl  w-32 h-32" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">Git Source Control</h2>
@@ -314,9 +313,9 @@
                 </div>
                 <div class=" rounded-md text-center hov-scale">
 
-                    <div class="card bg-base-100 w-96 h-[27rem] shadow-xl">
+                    <div class="card bg-base-100  shadow-xl">
                         <figure class="px-10 pt-10">
-                            <img src="responsive UI.png" alt="Shoes" class="rounded-xl" />
+                            <img src="responsive UI.png" alt="Shoes" class="rounded-xl  w-32 h-32" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">Repensive UI</h2>
