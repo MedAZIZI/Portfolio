@@ -5,34 +5,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mohammed - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
-    type="module"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="scripts.js"></script>
+
     <style>
         .hov-scale:hover {
             transform: scale(1.06);
         }
+
+        .demo:empty {
+            margin: auto;
+            width: 600px;
+            height: 150px;
+            /* change height to see repeat-y behavior */
+
+            background-image:
+                radial-gradient(circle 50px at 50px 50px, rgb(167, 166, 166) 99%, transparent 0),
+                linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%),
+                linear-gradient(rgb(167, 166, 166) 20px, transparent 0),
+                linear-gradient(rgb(167, 166, 166) 20px, transparent 0),
+                linear-gradient(rgb(167, 166, 166) 20px, transparent 0),
+                linear-gradient(rgb(167, 166, 166) 20px, transparent 0);
+
+            background-repeat: repeat-y;
+
+            background-size:
+                100px 200px,
+                /* circle */
+                50px 200px,
+                /* highlight */
+                150px 200px,
+                350px 200px,
+                300px 200px,
+                250px 200px;
+
+            background-position:
+                0 0,
+                /* circle */
+                0 0,
+                /* highlight */
+                120px 0,
+                120px 40px,
+                120px 80px,
+                120px 120px;
+
+            animation: shine 1s infinite;
+            opacity: 20%;
+        }
+
+        @keyframes shine {
+            to {
+                background-position:
+                    0 0,
+                    100% 0,
+                    /* move highlight to right */
+                    120px 0,
+                    120px 40px,
+                    120px 80px,
+                    120px 120px;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                /* Commence en dehors de l'écran */
+                opacity: 0;
+                /* Commence invisible */
+            }
+
+            100% {
+                transform: translateX(0);
+                /* Se déplace à sa position normale */
+                opacity: 1;
+                /* Devient visible */
+            }
+        }
+
+        .scroll-animation {
+            opacity: 0;
+            transform: translateX(-100%);
+            /* Position initiale hors de l'écran */
+            transition: opacity 0.3s ease-out, transform 1s ease-out;
+            /* Ajout de la transition pour l'animation */
+        }
+
+        .in-view {
+            animation: slideIn 1s forwards;
+            /* Animation qui fait glisser l'élément */
+        }
     </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const items = document.querySelectorAll('.item-inner'); // Sélectionne tous les éléments à animer
+
+        // Options de l'observateur : observer quand 50% de l'élément est visible
+        const options = {
+            threshold: 0.5 
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view'); // Ajoute la classe pour démarrer l'animation
+                    observer.unobserve(entry.target); // Arrête d'observer cet élément après l'animation
+                }
+            });
+        }, options);
+
+        items.forEach(item => {
+            item.classList.add('scroll-animation'); // Ajoute la classe de préparation
+            observer.observe(item); // Observer chaque élément
+        });
+    });
+</script>
 </head>
 
 <body class="bg-gray-900 text-gray-200">
     <header class="p-5">
         <nav class="flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-yellow-500">M</h1>
+            <h1 class="text-3xl font-bold text-yellow-500">M A</h1>
             <ul class="flex space-x-5">
                 <li><a href="#about" class="hover:text-yellow-500">About</a></li>
                 <li><a href="#portfolio" class="hover:text-yellow-500">Portfolio</a></li>
-                <li><a href="#contact" class="hover:text-yellow-500">Contact</a></li>
+                <li><a href="#experience" class="hover:text-yellow-500">Experience</a></li>
             </ul>
-            <button class="btn btn-outline btn-sm text-yellow-500">Search</button>
+            <button class="btn btn-outline btn-sm text-yellow-500">Contact</button>
         </nav>
     </header>
 
     <section class="flex flex-col items-center mt-10">
         <section class="flex flex-row items-center ">
             <div class="text-left ml-5 mr-5">
-                <h2 class="text-8xl font-bold">I'M <span class="text-yellow-500">Mohammed</span></h2>
-                <p class="mt-2 text-2xl">Full-Stack Developer & Tech Enthusiast</p>
+                <h2 class="text-2xl font-bold">I'M <span class="text-yellow-500">Mohammed</span></h2>
+                <p class="mt-2 text-4xl">Full-Stack Developer & Tech Enthusiast</p>
                 <button class="btn btn-warning mt-5">Contact Me</button>
             </div>
             <div class="ml-5 mr-5">
@@ -219,133 +328,88 @@
 
         <section id="portfolio" class="p-10 mt-5">
             <h3 class="text-6xl font-bold text-yellow-400 mb-5">Portfolio</h3>
-                loading... 
+            <div class="demo"></div>
         </section>
 
         <section id="experience" class="p-10 mt-5">
             <h3 class="text-6xl font-bold text-yellow-400 mb-5">Experience</h3>
-            
-            <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-                <li>
-                  <div class="timeline-middle">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      class="h-5 w-5">
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </div>
-                  <div class="timeline-start mb-10 md:text-end">
-                    <time class="font-mono italic">1984</time>
-                    <div class="text-lg font-black">First Macintosh computer</div>
-                    The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh
-                    personal computer. It played a pivotal role in establishing desktop publishing as a general
-                    office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed
-                    in a beige case with integrated carrying handle; it came with a keyboard and single-button
-                    mouse.
-                  </div>
-                  <hr />
-                </li>
-                <li>
-                  <hr />
-                  <div class="timeline-middle">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      class="h-5 w-5">
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </div>
-                  <div class="timeline-end md:mb-10">
-                    <time class="font-mono italic">1998</time>
-                    <div class="text-lg font-black">iMac</div>
-                    iMac is a family of all-in-one Mac desktop computers designed and built by Apple Inc. It has
-                    been the primary part of Apple's consumer desktop offerings since its debut in August 1998,
-                    and has evolved through seven distinct forms
-                  </div>
-                  <hr />
-                </li>
-                <li>
-                  <hr />
-                  <div class="timeline-middle">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      class="h-5 w-5">
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </div>
-                  <div class="timeline-start mb-10 md:text-end">
-                    <time class="font-mono italic">2001</time>
-                    <div class="text-lg font-black">iPod</div>
-                    The iPod is a discontinued series of portable media players and multi-purpose mobile devices
-                    designed and marketed by Apple Inc. The first version was released on October 23, 2001, about
-                    8+1⁄2 months after the Macintosh version of iTunes was released. Apple sold an estimated 450
-                    million iPod products as of 2022. Apple discontinued the iPod product line on May 10, 2022. At
-                    over 20 years, the iPod brand is the oldest to be discontinued by Apple
-                  </div>
-                  <hr />
-                </li>
-                <li>
-                  <hr />
-                  <div class="timeline-middle">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      class="h-5 w-5">
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </div>
-                  <div class="timeline-end md:mb-10">
-                    <time class="font-mono italic">2007</time>
-                    <div class="text-lg font-black">iPhone</div>
-                    iPhone is a line of smartphones produced by Apple Inc. that use Apple's own iOS mobile
-                    operating system. The first-generation iPhone was announced by then-Apple CEO Steve Jobs on
-                    January 9, 2007. Since then, Apple has annually released new iPhone models and iOS updates. As
-                    of November 1, 2018, more than 2.2 billion iPhones had been sold. As of 2022, the iPhone
-                    accounts for 15.6% of global smartphone market share
-                  </div>
-                  <hr />
-                </li>
-                <li>
-                  <hr />
-                  <div class="timeline-middle">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      class="h-5 w-5">
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                        clip-rule="evenodd" />
-                    </svg>
-                  </div>
-                  <div class="timeline-start mb-10 md:text-end">
-                    <time class="font-mono italic">2015</time>
-                    <div class="text-lg font-black">Apple Watch</div>
-                    The Apple Watch is a line of smartwatches produced by Apple Inc. It incorporates fitness
-                    tracking, health-oriented capabilities, and wireless telecommunication, and integrates with
-                    iOS and other Apple products and services
-                  </div>
-                </li>
-              </ul>
+            <section class="timeline flex justify-center items-center min-h-screen">
+                <ol class="relative border-l border-gray-700">
+                    <li class="mb-10 ml-6">
+                        <span
+                            class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
+                        <div class="item-inner scroll-animation">
+                            <time
+                                class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
+                                ■ 2024</time>
+
+                            <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL -
+                                    REACT</span></h3>
+                            <p class="mb-4 text-base font-normal text-gray-300">
+                                Application SaaS Mobile et Back-office.
+                                Projet réalisé dans le cadre du Master Informatique<br>
+                                - Conception et développement d’une application mobile SaaS, accessible depuis PC,<br>
+                                mobile et tablette (Reactnative).<br>
+                                - Création d’un back-office pour la gestion des ressources (employés, équipements)
+                                et<br>
+                                la synchronisation des données (Laravel).<br>
+                                - Publier l'application sur le Play Store.<br>
+                                - Assurer la maintenance de l'application.<br>
+                                - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="mb-10 ml-6">
+                        <span
+                            class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
+                        <div class="item-inner scroll-animation">
+                            <time
+                                class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
+                                ■ 2024</time>
+
+                            <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL -
+                                    REACT</span></h3>
+                            <p class="mb-4 text-base font-normal text-gray-300">
+                                Application SaaS Mobile et Back-office.
+                                Projet réalisé dans le cadre du Master Informatique<br>
+                                - Conception et développement d’une application mobile SaaS, accessible depuis PC,<br>
+                                mobile et tablette (Reactnative).<br>
+                                - Création d’un back-office pour la gestion des ressources (employés, équipements)
+                                et<br>
+                                la synchronisation des données (Laravel).<br>
+                                - Publier l'application sur le Play Store.<br>
+                                - Assurer la maintenance de l'application.<br>
+                                - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="mb-10 ml-6">
+                        <span
+                            class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
+                        <div class="item-inner scroll-animation">
+                            <time
+                                class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
+                                ■ 2024</time>
+
+                            <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL -
+                                    REACT</span></h3>
+                            <p class="mb-4 text-base font-normal text-gray-300">
+                                Application SaaS Mobile et Back-office.
+                                Projet réalisé dans le cadre du Master Informatique<br>
+                                - Conception et développement d’une application mobile SaaS, accessible depuis PC,<br>
+                                mobile et tablette (Reactnative).<br>
+                                - Création d’un back-office pour la gestion des ressources (employés, équipements)
+                                et<br>
+                                la synchronisation des données (Laravel).<br>
+                                - Publier l'application sur le Play Store.<br>
+                                - Assurer la maintenance de l'application.<br>
+                                - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
         </section>
 
         <footer class="p-10 mt-10  text-center">
