@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="ico.png" type="image/x-icon" />
     <title>Mohammed - Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="styles.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
     <script src="scripts.js"></script>
-
     <style>
         .hov-scale:hover {
             transform: scale(1.06);
@@ -98,34 +98,34 @@
         }
     </style>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const items = document.querySelectorAll('.item-inner'); // Sélectionne tous les éléments à animer
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const items = document.querySelectorAll('.item-inner'); // Sélectionne tous les éléments à animer
 
-        // Options de l'observateur : observer quand 50% de l'élément est visible
-        const options = {
-            threshold: 0.5 
-        };
+            // Options de l'observateur : observer quand 50% de l'élément est visible
+            const options = {
+                threshold: 0.5
+            };
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view'); // Ajoute la classe pour démarrer l'animation
-                    observer.unobserve(entry.target); // Arrête d'observer cet élément après l'animation
-                }
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view'); // Ajoute la classe pour démarrer l'animation
+                        observer.unobserve(entry.target); // Arrête d'observer cet élément après l'animation
+                    }
+                });
+            }, options);
+
+            items.forEach(item => {
+                item.classList.add('scroll-animation'); // Ajoute la classe de préparation
+                observer.observe(item); // Observer chaque élément
             });
-        }, options);
-
-        items.forEach(item => {
-            item.classList.add('scroll-animation'); // Ajoute la classe de préparation
-            observer.observe(item); // Observer chaque élément
         });
-    });
-</script>
+    </script>
 </head>
 
 <body class="bg-gray-900 text-gray-200">
-     <header class="p-5 "> <!--//sticky top-0 -->
+    <header class="p-5 "> <!--//sticky top-0 -->
         <nav class="flex justify-between items-center ">
             <h1 class="text-3xl font-bold text-yellow-500">M A</h1>
             <ul class="flex space-x-5">
@@ -133,11 +133,16 @@
                 <li><a href="#portfolio" class="hover:text-yellow-500">Portfolio</a></li>
                 <li><a href="#experience" class="hover:text-yellow-500">Experience</a></li>
             </ul>
+            <!-- <label class="swap">
+                <input type="checkbox" />
+                <div class="swap-on">🇫🇷 </div>
+                <div class="swap-off">🇺🇸 </div>
+            </label> -->
             <button class="btn btn-outline btn-sm text-yellow-500">Contact</button>
         </nav>
     </header>
 
-    <section class="flex flex-col items-center mt-10">
+    <section class="flex flex-col items-center">
         <section class="flex flex-row items-center ">
             <div class="text-left ml-5 mr-5">
                 <h2 class="text-2xl font-bold">I'M <span class="text-yellow-500">Mohammed</span></h2>
@@ -158,16 +163,19 @@
                 </div>
 
                 <div class="w-1/2 flex flex-col items-center">
-                    <img class="mask mask-circle w-16 hover:scale-150  transition-transform duration-300 mb-2" src="git.png" />
-                    <img class="mask mask-circle w-16 hover:scale-150  transition-transform duration-300 mb-2" src="linkedin.png" />
-                    <img class="mask mask-circle w-16 hover:scale-150  transition-transform duration-300" src="git.png" />
+                    <img class="mask mask-circle w-16 hover:scale-150  transition-transform duration-300 mb-2"
+                        src="git.png" />
+                    <img class="mask mask-circle w-16 hover:scale-150  transition-transform duration-300 mb-2"
+                        src="linkedin.png" />
+                    <img class="mask mask-circle w-16 hover:scale-150  transition-transform duration-300"
+                        src="git.png" />
                 </div>
             </div>
 
 
         </section>
 
-        <section id="about" class="p-20 min-w-[200px] max-w-[1200px]">
+        <section id="about" class="pr-20 pl-20 min-w-[200px] max-w-[1200px]">
             <h3 class="text-6xl font-bold text-white-500 mb-5">About</h3>
             <section class="grid grid-cols-[2fr_16fr] gap-2  mt-10">
                 <p class="text-lg border-t-2 border-yellow-500">
@@ -325,95 +333,223 @@
             </div>
         </section>
 
-        <section id="portfolio" class="p-10 mt-5">
+        <section id="portfolio" class="p-20 mr-10 ml-10">
             <h3 class="text-6xl font-bold text-yellow-400 mb-5">Portfolio</h3>
-            <div class="demo"></div>
+            <div class="grid grid-cols-1 sm:grid--2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="card glass w-full">
+                    <figure>
+                        <img src="logo-taskit.png" alt="Taskit Logo" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Taskit</h2>
+                        <p class="text-justify">
+                            Une solution de gestion d’interventions de techniciens sur site, qui permet une
+                            dématérialisation complète des fiches papiers grâce à une application mobile.
+                            La solution automatise la saisie des données et les synchronise avec votre ERP pour une
+                            gestion intégrée.
+                        </p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-accent badge-outline">Laravel</div>
+                            <div class="badge badge-accent badge-outline">React</div>
+                            <div class="badge badge-accent badge-outline">JS</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card glass w-full">
+                    <figure>
+                        <img src="logoT.png" alt="Tabkh Logo" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Tabkh</h2>
+                        <p class="text-justify">
+                            Tabkh est un site web interactif dédié à la visualisation de recettes culinaires. Ce projet met en pratique les compétences en PHP et JavaScript que j'ai acquises durant mes études, en utilisant le framework Symfony associé à DaisyUI. Il reflète mon expertise dans le développement web et ma capacité à créer des expériences utilisateurs intuitives et dynamiques.
+                        </p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-accent badge-outline">Symfony</div>
+                            <div class="badge badge-accent badge-outline">DaisyUI</div>
+                            <div class="badge badge-accent badge-outline">JS</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="card glass w-full">
+                    <figure>
+                        <img src="ngg-logo.png" alt="NGG Logo" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Number Guesser Game</h2>
+                        <p class="text-justify">
+                            Une solution de gestion d’interventions de techniciens sur site, qui permet une
+                            dématérialisation complète des fiches papiers grâce à une application mobile.
+                            La solution automatise la saisie des données et les synchronise avec votre ERP pour une
+                            gestion intégrée.
+                        </p>
+                        <div class="card-actions justify-end">
+                            <!-- <button class="btn btn-primary">Learn now!</button> -->
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="card glass w-full">
+                    <figure>
+                        <img src="tasakorraName.png" alt="tasakorraName Logo" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Tassakora</h2>
+                        <p class="text-justify">
+                            Une solution de gestion d’interventions de techniciens sur site, qui permet une
+                            dématérialisation complète des fiches papiers grâce à une application mobile.
+                            La solution automatise la saisie des données et les synchronise avec votre ERP pour une
+                            gestion intégrée.
+                        </p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-accent badge-outline">Symfony</div>
+                            <div class="badge badge-accent badge-outline">PHP</div>
+                            <div class="badge badge-accent badge-outline">JS</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="card glass w-full">
+                    <figure>
+                        <img src="km.png" alt="NGG Logo" />
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">Karmim Math</h2>
+                        <p class="text-justify">
+                            Une solution de gestion d’interventions de techniciens sur site, qui permet une
+                            dématérialisation complète des fiches papiers grâce à une application mobile.
+                            La solution automatise la saisie des données et les synchronise avec votre ERP pour une
+                            gestion intégrée.
+                        </p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-accent badge-outline">PHP</div>
+                            <div class="badge badge-accent badge-outline">JS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="experience" class="p-10 mt-5">
-            <h3 class="text-6xl font-bold text-yellow-400 mb-5">Experience</h3>
-            <section class="timeline flex justify-center items-center min-h-screen">
-                <ol class="relative border-l border-gray-700">
-                    <li class="mb-10 ml-6">
-                        <span
-                            class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
-                        <div class="item-inner scroll-animation">
-                            <time
-                                class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
-                                ■ 2024</time>
 
-                            <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL -
-                                    REACT</span></h3>
-                            <p class="mb-4 text-base font-normal text-gray-300">
-                                Application SaaS Mobile et Back-office.
-                                Projet réalisé dans le cadre du Master Informatique<br>
-                                - Conception et développement d’une application mobile SaaS, accessible depuis PC,<br>
-                                mobile et tablette (Reactnative).<br>
-                                - Création d’un back-office pour la gestion des ressources (employés, équipements)
-                                et<br>
-                                la synchronisation des données (Laravel).<br>
-                                - Publier l'application sur le Play Store.<br>
-                                - Assurer la maintenance de l'application.<br>
-                                - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="mb-10 ml-6">
-                        <span
-                            class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
-                        <div class="item-inner scroll-animation">
-                            <time
-                                class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
-                                ■ 2024</time>
+    <section id="experience" class="p-10 mt-5">
+        <h3 class="text-6xl font-bold text-yellow-400 mb-5">Experience</h3>
+        <section class="timeline flex justify-center items-center min-h-screen">
+            <ol class="relative border-l border-gray-700">
+                <li class="mb-10 ml-6">
+                    <span
+                        class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
+                    <div class="item-inner scroll-animation">
+                        <time
+                            class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
+                            ■ 2024</time>
 
-                            <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL -
-                                    REACT</span></h3>
-                            <p class="mb-4 text-base font-normal text-gray-300">
-                                Application SaaS Mobile et Back-office.
-                                Projet réalisé dans le cadre du Master Informatique<br>
-                                - Conception et développement d’une application mobile SaaS, accessible depuis PC,<br>
-                                mobile et tablette (Reactnative).<br>
-                                - Création d’un back-office pour la gestion des ressources (employés, équipements)
-                                et<br>
-                                la synchronisation des données (Laravel).<br>
-                                - Publier l'application sur le Play Store.<br>
-                                - Assurer la maintenance de l'application.<br>
-                                - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
-                            </p>
-                        </div>
-                    </li>
-                    <li class="mb-10 ml-6">
-                        <span
-                            class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
-                        <div class="item-inner scroll-animation">
-                            <time
-                                class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
-                                ■ 2024</time>
+                        <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL -
+                                REACT</span></h3>
+                        <p class="mb-4 text-base font-normal text-gray-300">
+                            Application SaaS Mobile et Back-office.
+                            Projet réalisé dans le cadre du Master Informatique<br>
+                            - Conception et développement d’une application mobile SaaS, accessible depuis PC,<br>
+                            mobile et tablette (Reactnative).<br>
+                            - Création d’un back-office pour la gestion des ressources (employés, équipements)
+                            et<br>
+                            la synchronisation des données (Laravel).<br>
+                            - Publier l'application sur le Play Store.<br>
+                            - Assurer la maintenance de l'application.<br>
+                            - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
+                        </p>
+                    </div>
+                </li>
+                <li class="mb-10 ml-6">
+                    <span
+                        class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
+                    <div class="item-inner scroll-animation">
+                        <time
+                            class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
+                            ■ 2023</time>
 
-                            <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL -
-                                    REACT</span></h3>
-                            <p class="mb-4 text-base font-normal text-gray-300">
-                                Application SaaS Mobile et Back-office.
-                                Projet réalisé dans le cadre du Master Informatique<br>
-                                - Conception et développement d’une application mobile SaaS, accessible depuis PC,<br>
-                                mobile et tablette (Reactnative).<br>
-                                - Création d’un back-office pour la gestion des ressources (employés, équipements)
-                                et<br>
-                                la synchronisation des données (Laravel).<br>
-                                - Publier l'application sur le Play Store.<br>
-                                - Assurer la maintenance de l'application.<br>
-                                - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
-                            </p>
-                        </div>
-                    </li>
-                </ol>
-            </section>
+                        <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL -
+                                REACT</span></h3>
+                        <p class="mb-4 text-base font-normal text-gray-300">
+                            Application SaaS Mobile et Back-office.
+                            Projet réalisé dans le cadre du Master Informatique<br>
+                            - Conception et développement d’une application mobile SaaS, accessible depuis PC,<br>
+                            mobile et tablette (Reactnative).<br>
+                            - Création d’un back-office pour la gestion des ressources (employés, équipements)
+                            et<br>
+                            la synchronisation des données (Laravel).<br>
+                            - Publier l'application sur le Play Store.<br>
+                            - Assurer la maintenance de l'application.<br>
+                            - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
+                        </p>
+                    </div>
+                </li>
+                <li class="mb-10 ml-6">
+                    <span
+                        class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
+                    <div class="item-inner scroll-animation">
+                        <time
+                            class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
+                            ■ 2021</time>
 
+                        <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL -
+                                REACT</span></h3>
+                        <p class="mb-4 text-base font-normal text-gray-300">
+                            Application SaaS Mobile et Back-office.
+                            Projet réalisé dans le cadre du Master Informatique<br>
+                            - Conception et développement d’une application mobile SaaS, accessible depuis PC,<br>
+                            mobile et tablette (Reactnative).<br>
+                            - Création d’un back-office pour la gestion des ressources (employés, équipements)
+                            et<br>
+                            la synchronisation des données (Laravel).<br>
+                            - Publier l'application sur le Play Store.<br>
+                            - Assurer la maintenance de l'application.<br>
+                            - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
+                        </p>
+                    </div>
+                </li>
+            </ol>
         </section>
 
-        <footer class="p-10 mt-10  text-center">
-            <p>© 2025 Mohammed. All rights reserved.</p>
-        </footer>
+    </section>
+
+    <section id="contact" class="p-10 mt-5 bg-gray-700 rounded-lg w-1/2 mx-auto">
+        <h3 class="text-4xl font-bold text-yellow-500 mb-5 text-center">Contact Me</h3>
+        <form action="mailto:m.azizi@outlook.fr" method="POST" enctype="text/plain"
+            class="max-w-xl mx-auto bg-white p-8 shadow-md rounded-lg">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                <input type="text" id="name" name="name"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900"
+                    placeholder="Your Name" required />
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                <input type="email" id="email" name="email"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900"
+                    placeholder="Your Email" required />
+            </div>
+            <div class="mb-4">
+                <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                <textarea id="message" name="message"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900"
+                    rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit"
+                    class="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                    Send Message
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <footer class="p-10 mt-10  text-center">
+        <p>© 2025 Mohammed. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
