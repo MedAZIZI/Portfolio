@@ -133,18 +133,20 @@
                 <li><a href="#portfolio" class="hover:text-yellow-500">Portfolio</a></li>
                 <li><a href="#experience" class="hover:text-yellow-500">Experience</a></li>
             </ul>
-            <!-- <label class="swap">
-                <input type="checkbox" />
-                <div class="swap-on">🇫🇷 </div>
-                <div class="swap-off">🇺🇸 </div>
-            </label> -->
-            <button class="btn btn-outline btn-sm text-yellow-500">Contact</button>
+            <div>
+                <!-- <label class="swap">
+                    <input type="checkbox" />
+                    <div class="swap-on">🇫🇷 </div>
+                    <div class="swap-off">🇺🇸 </div>
+                </label> -->
+                <button class="btn btn-outline btn-sm text-yellow-500"> <a href="#contact">Contact</a> </button>
+            </div>
         </nav>
     </header>
 
     <section class="flex flex-col items-center">
-        <section class="flex flex-row items-center ">
-            <div class="text-left ml-5 mr-5">
+        <section id="presentation" class="flex flex-row items-center ">
+            <div class="text-left ml-5 mr-5 ">
                 <h2 class="text-2xl font-bold">I'M <span class="text-yellow-500">Mohammed</span></h2>
                 <p class="mt-2 text-4xl">Full-Stack Developer & Tech Enthusiast</p>
                 <button class="btn btn-warning mt-5">Contact Me</button>
@@ -155,7 +157,7 @@
             <div class="mt-8 ml-5 mr-5">
                 <img src="User.png" alt="Profile" class="rounded-full" /> <!-- border-4 border-yellow-400 -->
             </div>
-            <div class="h-screen flex flex-col">
+            <div class="flex flex-col">
                 <div class="flex items-end justify-center h-1/2 mb-2">
                     <div class="text-lg w-1/2">
                         <span class="block h-16 border-l-4 border-yellow-500"></span>
@@ -176,7 +178,9 @@
         </section>
 
         <section id="about" class="pr-20 pl-20 min-w-[200px] max-w-[1200px]">
+
             <h3 class="text-6xl font-bold text-white-500 mb-5">About</h3>
+
             <section class="grid grid-cols-[2fr_16fr] gap-2  mt-10">
                 <p class="text-lg border-t-2 border-yellow-500">
 
@@ -191,7 +195,7 @@
             </section>
         </section>
 
-        <section id="skills" class="p-10 mt-5">
+        <section id="skills" class="p-10 mt-5 ">
             <h3 class="text-6xl font-bold text-yellow-500 mb-5">My Skills</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <div class=" rounded-md text-center hov-scale">
@@ -333,13 +337,13 @@
             </div>
         </section>
 
-        <section id="portfolio" class="p-20 mr-10 ml-10">
+        <section id="portfolio" class="p-20 pl-20 mr-10 ml-10 w-3/4">
             <h3 class="text-6xl font-bold text-yellow-400 mb-5">Portfolio</h3>
             <div class="grid grid-cols-1 sm:grid--2 lg:grid-cols-3 gap-6">
                 <!-- Card 1 -->
                 <div class="card glass w-full">
                     <figure>
-                        <img src="logo-taskit.png" alt="Taskit Logo" />
+                        <img src="logo-taskit1.png" alt="Taskit Logo" />
                     </figure>
                     <div class="card-body">
                         <h2 class="card-title">Taskit</h2>
@@ -364,7 +368,13 @@
                     <div class="card-body">
                         <h2 class="card-title">Tabkh</h2>
                         <p class="text-justify">
-                            Tabkh est un site web interactif dédié à la visualisation de recettes culinaires. Ce projet met en pratique les compétences en PHP et JavaScript que j'ai acquises durant mes études, en utilisant le framework Symfony associé à DaisyUI. Il reflète mon expertise dans le développement web et ma capacité à créer des expériences utilisateurs intuitives et dynamiques.
+                            Tabkh est un site web interactif dédié à la visualisation de recettes culinaires. Ce
+                            projet
+                            met en pratique les compétences en PHP et JavaScript que j'ai acquises durant mes
+                            études, en
+                            utilisant le framework Symfony associé à DaisyUI. Il reflète mon expertise dans le
+                            développement web et ma capacité à créer des expériences utilisateurs intuitives et
+                            dynamiques.
                         </p>
                         <div class="card-actions justify-end">
                             <div class="badge badge-accent badge-outline">Symfony</div>
@@ -381,29 +391,32 @@
                     <div class="card-body">
                         <h2 class="card-title">Number Guesser Game</h2>
                         <p class="text-justify">
-                            Une solution de gestion d’interventions de techniciens sur site, qui permet une
-                            dématérialisation complète des fiches papiers grâce à une application mobile.
-                            La solution automatise la saisie des données et les synchronise avec votre ERP pour une
-                            gestion intégrée.
+                            C'est un jeu web interactif créé avec Symfony pour le back-end et
+                            Twig , JavaScript pour une interface dynamique. Le but est de deviner un nombre
+                            aléatoire,
+                            avec une
+                            expérience fluide grâce à l'intégration des deux technologies.
                         </p>
                         <div class="card-actions justify-end">
-                            <!-- <button class="btn btn-primary">Learn now!</button> -->
-                            
+                            <div class="badge badge-accent badge-outline">Symfony</div>
+                            <div class="badge badge-accent badge-outline">Twig</div>
+                            <div class="badge badge-accent badge-outline">JS</div>
                         </div>
                     </div>
                 </div>
                 <!-- Card 4 -->
                 <div class="card glass w-full">
                     <figure>
-                        <img src="tasakorraName.png" alt="tasakorraName Logo" />
+                        <img src="tasakorra.png" alt="tasakorraName Logo" />
                     </figure>
                     <div class="card-body">
                         <h2 class="card-title">Tassakora</h2>
                         <p class="text-justify">
-                            Une solution de gestion d’interventions de techniciens sur site, qui permet une
-                            dématérialisation complète des fiches papiers grâce à une application mobile.
-                            La solution automatise la saisie des données et les synchronise avec votre ERP pour une
-                            gestion intégrée.
+                            Le site web permet de présenter facilement les offres et annonces
+                            de voyages. Elle met en avant les collaborateurs et partenaires de l'entreprise, tout en
+                            offrant un formulaire de contact interactif pour permettre aux utilisateurs de
+                            manifester
+                            leur intérêt pour les différentes offres.
                         </p>
                         <div class="card-actions justify-end">
                             <div class="badge badge-accent badge-outline">Symfony</div>
@@ -420,14 +433,43 @@
                     <div class="card-body">
                         <h2 class="card-title">Karmim Math</h2>
                         <p class="text-justify">
-                            Une solution de gestion d’interventions de techniciens sur site, qui permet une
-                            dématérialisation complète des fiches papiers grâce à une application mobile.
-                            La solution automatise la saisie des données et les synchronise avec votre ERP pour une
-                            gestion intégrée.
+                            Ce site web permet d'accéder à des cours et exercices de mathématiques en ligne, avec
+                            une
+                            authentification sécurisée pour chaque utilisateur. Il offre une interface simple pour
+                            suivre les leçons et pratiquer avec des exercices adaptés à différents niveaux.
                         </p>
                         <div class="card-actions justify-end">
                             <div class="badge badge-accent badge-outline">PHP</div>
                             <div class="badge badge-accent badge-outline">JS</div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Card 6 -->
+                <div class="card glass w-full">
+                    <figure class="flex flex-col items-center gap-4">
+                        <img src="MA Portf.png" alt="NGG Logo" />
+                        <!-- <h1 class="text-5xl font-bold text-yellow-500 flex justify-center ">
+                            M A
+                        </h1>
+                        <h1 class="text-5xl font-bold text-transparent flex items-center justify-center block" style="-webkit-text-stroke: 2px #facc15;">
+                            Portfolio
+                        </h1> -->
+                    </figure>
+                    <div class="card-body">
+                        <h2 class="card-title">MA Portfolio</h2>
+                        <p class="text-justify">
+                            Ce portfolio est une single page interactive qui met en valeur mes compétences, mes
+                            projets
+                            et mon parcours dans le développement informatique. Conçu de manière moderne et épurée,
+                            il
+                            permet une navigation fluide pour découvrir mon expertise technique et ma passion pour
+                            l'innovation.
+                        </p>
+                        <div class="card-actions justify-end">
+                            <div class="badge badge-accent badge-outline">DaisyUI</div>
+                            <div class="badge badge-accent badge-outline">JS</div>
+                            <div class="badge badge-accent badge-outline">HTML</div>
                         </div>
                     </div>
                 </div>
@@ -435,116 +477,123 @@
         </section>
 
 
-    <section id="experience" class="p-10 mt-5">
-        <h3 class="text-6xl font-bold text-yellow-400 mb-5">Experience</h3>
-        <section class="timeline flex justify-center items-center min-h-screen">
-            <ol class="relative border-l border-gray-700">
-                <li class="mb-10 ml-6">
-                    <span
-                        class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
-                    <div class="item-inner scroll-animation">
-                        <time
-                            class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
-                            ■ 2024</time>
+        <section id="experience" class="p-10 mt-5">
+            <h3 class="text-6xl font-bold text-yellow-400 mb-5">Experience</h3>
+            <section class="timeline flex justify-center items-center min-h-screen">
+                <ol class="relative border-l border-gray-700">
+                    <li class="mb-10 ml-6">
+                        <span
+                            class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
+                        <div class="item-inner scroll-animation">
+                            <time
+                                class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
+                                ■ 2024</time>
 
-                        <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL -
-                                REACT</span></h3>
-                        <p class="mb-4 text-base font-normal text-gray-300">
-                            Application SaaS Mobile et Back-office.
-                            Projet réalisé dans le cadre du Master Informatique<br>
-                            - Conception et développement d’une application mobile SaaS, accessible depuis PC,<br>
-                            mobile et tablette (Reactnative).<br>
-                            - Création d’un back-office pour la gestion des ressources (employés, équipements)
-                            et<br>
-                            la synchronisation des données (Laravel).<br>
-                            - Publier l'application sur le Play Store.<br>
-                            - Assurer la maintenance de l'application.<br>
-                            - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
-                        </p>
-                    </div>
-                </li>
-                <li class="mb-10 ml-6">
-                    <span
-                        class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
-                    <div class="item-inner scroll-animation">
-                        <time
-                            class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
-                            ■ 2023</time>
+                            <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL
+                                    -
+                                    REACT</span></h3>
+                            <p class="mb-4 text-base font-normal text-gray-300">
+                                Application SaaS Mobile et Back-office.
+                                Projet réalisé dans le cadre du Master Informatique<br>
+                                - Conception et développement d’une application mobile SaaS, accessible depuis
+                                PC,<br>
+                                mobile et tablette (Reactnative).<br>
+                                - Création d’un back-office pour la gestion des ressources (employés, équipements)
+                                et<br>
+                                la synchronisation des données (Laravel).<br>
+                                - Publier l'application sur le Play Store.<br>
+                                - Assurer la maintenance de l'application.<br>
+                                - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="mb-10 ml-6">
+                        <span
+                            class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
+                        <div class="item-inner scroll-animation">
+                            <time
+                                class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
+                                ■ 2023</time>
 
-                        <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL -
-                                REACT</span></h3>
-                        <p class="mb-4 text-base font-normal text-gray-300">
-                            Application SaaS Mobile et Back-office.
-                            Projet réalisé dans le cadre du Master Informatique<br>
-                            - Conception et développement d’une application mobile SaaS, accessible depuis PC,<br>
-                            mobile et tablette (Reactnative).<br>
-                            - Création d’un back-office pour la gestion des ressources (employés, équipements)
-                            et<br>
-                            la synchronisation des données (Laravel).<br>
-                            - Publier l'application sur le Play Store.<br>
-                            - Assurer la maintenance de l'application.<br>
-                            - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
-                        </p>
-                    </div>
-                </li>
-                <li class="mb-10 ml-6">
-                    <span
-                        class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
-                    <div class="item-inner scroll-animation">
-                        <time
-                            class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
-                            ■ 2021</time>
+                            <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL
+                                    -
+                                    REACT</span></h3>
+                            <p class="mb-4 text-base font-normal text-gray-300">
+                                Application SaaS Mobile et Back-office.
+                                Projet réalisé dans le cadre du Master Informatique<br>
+                                - Conception et développement d’une application mobile SaaS, accessible depuis
+                                PC,<br>
+                                mobile et tablette (Reactnative).<br>
+                                - Création d’un back-office pour la gestion des ressources (employés, équipements)
+                                et<br>
+                                la synchronisation des données (Laravel).<br>
+                                - Publier l'application sur le Play Store.<br>
+                                - Assurer la maintenance de l'application.<br>
+                                - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
+                            </p>
+                        </div>
+                    </li>
+                    <li class="mb-10 ml-6">
+                        <span
+                            class="absolute flex items-center justify-center w-8 h-8 bg-yellow-500 rounded-full -left-4 ring-4 ring-gray-900"></span>
+                        <div class="item-inner scroll-animation">
+                            <time
+                                class="inline-block mb-2 text-sm font-light leading-none text-yellow-500 border-r-2 border-gray-500 rounded-r-lg pr-2 bg-gray-700">
+                                ■ 2021</time>
 
-                        <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL -
-                                REACT</span></h3>
-                        <p class="mb-4 text-base font-normal text-gray-300">
-                            Application SaaS Mobile et Back-office.
-                            Projet réalisé dans le cadre du Master Informatique<br>
-                            - Conception et développement d’une application mobile SaaS, accessible depuis PC,<br>
-                            mobile et tablette (Reactnative).<br>
-                            - Création d’un back-office pour la gestion des ressources (employés, équipements)
-                            et<br>
-                            la synchronisation des données (Laravel).<br>
-                            - Publier l'application sur le Play Store.<br>
-                            - Assurer la maintenance de l'application.<br>
-                            - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
-                        </p>
-                    </div>
-                </li>
-            </ol>
+                            <h3 class="text-lg font-semibold">TaskIt - <span class="text-yellow-300 text-sm">LARAVEL
+                                    -
+                                    REACT</span></h3>
+                            <p class="mb-4 text-base font-normal text-gray-300">
+                                Application SaaS Mobile et Back-office.
+                                Projet réalisé dans le cadre du Master Informatique<br>
+                                - Conception et développement d’une application mobile SaaS, accessible depuis
+                                PC,<br>
+                                mobile et tablette (Reactnative).<br>
+                                - Création d’un back-office pour la gestion des ressources (employés, équipements)
+                                et<br>
+                                la synchronisation des données (Laravel).<br>
+                                - Publier l'application sur le Play Store.<br>
+                                - Assurer la maintenance de l'application.<br>
+                                - Planifier les tâches en méthode agile SCRUM (7 jours par sprint)<br>
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
         </section>
 
-    </section>
-
-    <section id="contact" class="p-10 mt-5 bg-gray-700 rounded-lg w-1/2 mx-auto">
-        <h3 class="text-4xl font-bold text-yellow-500 mb-5 text-center">Contact Me</h3>
-        <form action="mailto:m.azizi@outlook.fr" method="POST" enctype="text/plain"
-            class="max-w-xl mx-auto bg-white p-8 shadow-md rounded-lg">
-            <div class="mb-4">
-                <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
-                <input type="text" id="name" name="name"
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900"
-                    placeholder="Your Name" required />
-            </div>
-            <div class="mb-4">
-                <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
-                <input type="email" id="email" name="email"
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900"
-                    placeholder="Your Email" required />
-            </div>
-            <div class="mb-4">
-                <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
-                <textarea id="message" name="message"
-                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900"
-                    rows="5" placeholder="Your Message" required></textarea>
-            </div>
-            <div class="text-center">
-                <button type="submit"
-                    class="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
-                    Send Message
-                </button>
-            </div>
-        </form>
+        <section id="contact" class="p-10 mt-5 bg-gray-700 rounded-lg w-1/2 mx-auto">
+            <h3 class="text-4xl font-bold text-yellow-500 mb-5 text-center">Contact Me</h3>
+            <form action="mailto:m.azizi@outlook.fr" method="POST" enctype="text/plain"
+                class="max-w-xl mx-auto bg-white p-8 shadow-md rounded-lg">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-bold mb-2">Name</label>
+                    <input type="text" id="name" name="name"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900"
+                        placeholder="Your Name" required />
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+                    <input type="email" id="email" name="email"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900"
+                        placeholder="Your Email" required />
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 font-bold mb-2">Message</label>
+                    <textarea id="message" name="message"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 text-gray-900"
+                        rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit"
+                        class="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </section>
     </section>
 
     <footer class="p-10 mt-10  text-center">
